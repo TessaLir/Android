@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:text="RESULT"
         android:id="@+id/result.memory"
         android:layout_width="match_parent"
         android:layout_height="@dimen/result_memory_text_height"
@@ -18,6 +19,7 @@
         android:layout_gravity="center|end"/>
 
     <TextView
+        android:text="RESULT"
         android:id="@+id/result.basic"
         android:layout_width="match_parent"
         android:layout_height="@dimen/result_basic_text_height"
@@ -26,5 +28,9 @@
         android:gravity="end"
         android:layout_gravity="center|end"/>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bottons.items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
