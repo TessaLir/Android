@@ -28,5 +28,6 @@
         android:gravity="end"
         android:layout_gravity="center|end"/>
 
+    <include layout="@layout/button_items" />
 
 </LinearLayout>
