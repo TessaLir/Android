@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String lang = "en-ru";
 
+
+    //TODO При развороте приложения, приложение присваивает lang = en-ru нужно поправить!!!
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String msg = editText.getText().toString();
 
         Call<Translater> call = service.search(
-                "trnsl.1.1.20181006T111728Z.c88fa682bff54861.3d635ceb92329af9d8654f28fc64a09e774f0bb4",
+                "",     //TODO А тут надо вставить свой ключик ;)
                 msg,
                 lang
         );
