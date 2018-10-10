@@ -16,7 +16,7 @@
 
     <Button
         android:id="@+id/button"
-        android:text="SUBMIT"
+        android:text="@string/text_button_translate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -27,13 +27,13 @@
         <RadioButton
             android:id="@+id/rb_rus"
             android:checked="true"
-            android:text="en - ru"
+            android:text="@string/text_to_rus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/rb_en"
-            android:text="ru - en"
+            android:text="@string/text_to_en"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -44,6 +44,17 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/yandex"
+        android:visibility="invisible"
+        android:text="@string/text_yandex_translate"
+        android:textSize="@dimen/text_size_yandex"
+        android:textStyle="italic"
+        android:layout_gravity="center"
+        android:textColor="@color/colorAccent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
