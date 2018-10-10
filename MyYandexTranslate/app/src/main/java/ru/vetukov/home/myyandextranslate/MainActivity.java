@@ -1,5 +1,7 @@
 package ru.vetukov.home.myyandextranslate;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button button;
     private EditText editText;
+    private TextView yandex;
     private TextView text;
 
     private RadioButton rbRus;
@@ -42,7 +45,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         button  = findViewById(R.id.button);
         editText = findViewById(R.id.edit_text);
-        text =findViewById(R.id.text);
+        text = findViewById(R.id.text);
+        yandex = findViewById(R.id.yandex);
 
         rbRus = findViewById(R.id.rb_rus);
         rbEng = findViewById(R.id.rb_en);
@@ -51,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         rbEng.setOnClickListener(this);
         rbRus.setOnClickListener(this);
+
+        yandex.setOnClickListener(this);
 
     }
 
@@ -66,19 +72,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.rb_rus :
                 lang = "en-ru";
                 break;
+            case R.id.yandex :
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://translate.yandex.ru/"));
+                startActivity(i);
+                break;
         }
     }
 
     private void changeText() {
         String msg = editText.getText().toString();
 
-        Call<Translater> call = service.search(
-                "",     //TODO А тут надо вставить свой ключик ;)
-                msg,
-                lang
-        );
+        String key = "";
 
-        call.enqueue(this);
+        if (key.length() == 0) text.setText("Не введен ключ разработчика!!!");
+        else {
+            Call<Translater> call = service.search(key,     //TODO А тут надо вставить свой ключик ;)
+                                                   msg,
+                                                   lang);
+            call.enqueue(this);
+            yandex.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
