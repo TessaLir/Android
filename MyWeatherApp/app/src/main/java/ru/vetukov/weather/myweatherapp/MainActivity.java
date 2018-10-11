@@ -9,6 +9,7 @@ import android.widget.TextView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import ru.vetukov.weather.myweatherapp.objects.MoreSearchWeatherObj;
 import ru.vetukov.weather.myweatherapp.objects.SingleSearchWeatherObj;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     Response response;
     Call<SingleSearchWeatherObj> call;
+    Call<MoreSearchWeatherObj> callTwo;
     WeatherApp weather;
 
     @Override
@@ -35,10 +37,15 @@ public class MainActivity extends AppCompatActivity {
 
         weather = new WeatherApp();
 
-        call = weather.getWeatherService().getWeatherNow("Moscow",
-                                                         "metric",
-                                                         "ru",
-                                                         "c7d271abe99645d6f5ca56a562688c84");
+        call = weather.getWeatherService().getWeatherNow("Moscow"
+                                                        ,"metric"
+                                                        ,"ru"
+                                                        ,"c7d271abe99645d6f5ca56a562688c84");
+
+        callTwo = weather.getWeatherService().getWeather("Moscow"
+                                                        ,"metric"
+                                                        ,"ru"
+                                                        ,"c7d271abe99645d6f5ca56a562688c84");
 
         call.enqueue(new Callback<SingleSearchWeatherObj>() {
             @Override
@@ -63,7 +70,28 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<SingleSearchWeatherObj> call, Throwable t) {
-                Log.d("111","111");
+                Log.d("weather","To bad");
+            }
+        });
+
+
+        callTwo.enqueue(new Callback<MoreSearchWeatherObj>() {
+            @Override
+            public void onResponse(Call<MoreSearchWeatherObj> call, Response<MoreSearchWeatherObj> response) {
+                MoreSearchWeatherObj ex = response.body();
+
+                for (MoreSearchWeatherObj.List01 el : ex.getList()) {
+                    Log.d("weather", String.format("В %s - %s тепла"
+                                                       , el.getDt()
+                                                       , el.getMain().getTemp().toString()));
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<MoreSearchWeatherObj> call, Throwable t) {
+                Log.d("weather","To bad too");
             }
         });
 
