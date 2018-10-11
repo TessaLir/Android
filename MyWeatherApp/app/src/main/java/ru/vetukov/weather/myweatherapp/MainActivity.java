@@ -6,13 +6,10 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.IOException;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import ru.vetukov.weather.myweatherapp.objects.Example;
-import ru.vetukov.weather.myweatherapp.objects.Weather;
+import ru.vetukov.weather.myweatherapp.objects.SingleSearchWeatherObj;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView image;
 
     Response response;
-    Call<Example> call;
+    Call<SingleSearchWeatherObj> call;
     WeatherApp weather;
 
     @Override
@@ -43,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
                                                          "ru",
                                                          "c7d271abe99645d6f5ca56a562688c84");
 
-        call.enqueue(new Callback<Example>() {
+        call.enqueue(new Callback<SingleSearchWeatherObj>() {
             @Override
-            public void onResponse(Call<Example> call, Response<Example> response) {
-                Example ex = response.body();
+            public void onResponse(Call<SingleSearchWeatherObj> call, Response<SingleSearchWeatherObj> response) {
+                SingleSearchWeatherObj ex = response.body();
 
                 if (ex != null) {
 
@@ -65,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Example> call, Throwable t) {
+            public void onFailure(Call<SingleSearchWeatherObj> call, Throwable t) {
                 Log.d("111","111");
             }
         });

@@ -4,7 +4,7 @@ package ru.vetukov.weather.myweatherapp;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import ru.vetukov.weather.myweatherapp.objects.Example;
+import ru.vetukov.weather.myweatherapp.objects.SingleSearchWeatherObj;
 
 /*
 http://api.openweathermap.org
@@ -19,7 +19,7 @@ public interface WeatherService {
 
     // запрос на текущую температуру.
     @GET("/data/2.5/weather")
-    Call<Example> getWeatherNow (
+    Call<SingleSearchWeatherObj> getWeatherNow (
             @Query("q") String q,
             @Query("units") String units,
             @Query("lang") String lang,
