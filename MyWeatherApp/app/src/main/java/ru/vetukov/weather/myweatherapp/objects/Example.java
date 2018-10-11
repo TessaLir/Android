@@ -4,14 +4,14 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Weather {
+public class Example {
 
     @SerializedName("coord")
     @Expose
     private Coord coord;
     @SerializedName("weather")
     @Expose
-    private List<Weather_> weather = null;
+    private List<Weather> weather = null;
     @SerializedName("base")
     @Expose
     private String base;
@@ -51,11 +51,11 @@ public class Weather {
         this.coord = coord;
     }
 
-    public List<Weather_> getWeather() {
+    public List<Weather> getWeather() {
         return weather;
     }
 
-    public void setWeather(List<Weather_> weather) {
+    public void setWeather(List<Weather> weather) {
         this.weather = weather;
     }
 
