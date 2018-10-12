@@ -34,7 +34,7 @@ public class WeatherAdapter extends ArrayAdapter<MoreSearchWeatherObj.List01> {
 
         MoreSearchWeatherObj.List01 li = list.get(position);
 
-        timeView.setText(li.getDtTxt().substring(11, li.getDtTxt().length() - 3));
+        timeView.setText(li.getDtTxt().substring(0, li.getDtTxt().length() - 3));
         tempView.setText(li.getMain().getTemp().toString());
 
         return view;
