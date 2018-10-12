@@ -7,10 +7,6 @@ import retrofit2.http.Query;
 import ru.vetukov.weather.myweatherapp.objects.MoreSearchWeatherObj;
 import ru.vetukov.weather.myweatherapp.objects.SingleSearchWeatherObj;
 
-/*
-http://api.openweathermap.org/data/2.5/forecast?q=Moscow&units=metric&lang=ru&appid=c7d271abe99645d6f5ca56a562688c84
-*/
-
 public interface WeatherService {
 
     // запрос на текущую температуру.

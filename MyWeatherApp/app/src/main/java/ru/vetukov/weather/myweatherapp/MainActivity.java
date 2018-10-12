@@ -2,7 +2,6 @@ package ru.vetukov.weather.myweatherapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -27,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private List<MoreSearchWeatherObj.List01> list = new ArrayList<>();
     private WeatherAdapter adapter;
 
-
     Call<SingleSearchWeatherObj> call;
     Call<MoreSearchWeatherObj> callTwo;
     WeatherApp weather;
@@ -40,23 +38,18 @@ public class MainActivity extends AppCompatActivity {
         city = findViewById(R.id.text_city);
         temp= findViewById(R.id.text_temp);
         description = findViewById(R.id.text_desc);
-
         image = findViewById(R.id.image);
-
         weather = new WeatherApp();
 
-
         callTwo = weather.getWeatherService().getWeather("Moscow"
-                ,"metric"
-                ,"ru"
-                ,"c7d271abe99645d6f5ca56a562688c84");
+                                                        ,"metric"
+                                                        ,"ru"
+                                                        ,"c7d271abe99645d6f5ca56a562688c84");
 
         call = weather.getWeatherService().getWeatherNow("Moscow"
                                                         ,"metric"
                                                         ,"ru"
                                                         ,"c7d271abe99645d6f5ca56a562688c84");
-
-
 
         callTwo.enqueue(new Callback<MoreSearchWeatherObj>() {
             @Override
@@ -64,11 +57,9 @@ public class MainActivity extends AppCompatActivity {
                 MoreSearchWeatherObj ex = response.body();
 
                 for (MoreSearchWeatherObj.List01 el : ex.getList()) {
-
                     list.add(el);
                 }
-
-
+                changeView();
             }
 
             @Override
@@ -84,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                 SingleSearchWeatherObj ex = response.body();
 
                 if (ex != null) {
-
                     String desc = ex.getWeather().get(0).getDescription();
 
                     temp.setText(ex.getMain().getTemp().toString());
@@ -104,20 +94,11 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("weather","To bad");
             }
         });
+    }
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+    private void changeView() {
         adapter = new WeatherAdapter(this, R.layout.weather_item, list);
-
         ListView view = findViewById(R.id.weather_items);
-
         view.setAdapter(adapter);
-
-
-
     }
 }
