@@ -41,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
         image = findViewById(R.id.image);
         weather = new WeatherApp();
 
-        callTwo = weather.getWeatherService().getWeather("Moscow"
+        call = weather.getWeatherService().getWeatherNow("Moscow"
                                                         ,"metric"
                                                         ,"ru"
                                                         ,"c7d271abe99645d6f5ca56a562688c84");
 
-        call = weather.getWeatherService().getWeatherNow("Moscow"
+        callTwo = weather.getWeatherService().getWeather("Moscow"
                                                         ,"metric"
                                                         ,"ru"
                                                         ,"c7d271abe99645d6f5ca56a562688c84");
