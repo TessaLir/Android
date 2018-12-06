@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">OnymaMobile</string>
+
+
+    <string-array name="spinner_realm_item">
+        <item>Onyma Team</item>
+    </string-array>
+
+
+</resources>
