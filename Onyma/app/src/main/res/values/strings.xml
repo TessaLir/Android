@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Onyma</string>
+    <string name="text_view_auth_title">Вход</string>
+    <string name="text_view_auth_login">Логин</string>
+    <string name="text_view_auth_password">Пароль</string>
+    <string name="text_view_auth_server">Сервер</string>
+    <string name="text_view_auth_realm">Команда</string>
+    <string name="button_enter_text">Вход</string>
+    <string name="text_view_auth_repair">Восстановить пароль</string>
 
     <string-array name="spinner_language">
         <item>Русский</item>
