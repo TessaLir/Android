@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
+        android:textSize="@dimen/text_list_size_local"
         android:text="Гарри Поллер"/>
 
     <ImageView
@@ -29,6 +30,7 @@
         android:layout_toRightOf="@+id/view.detail.image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/text_list_size"
         android:text="Harry Potter"/>
 
     <TextView
@@ -37,6 +39,7 @@
         android:layout_toRightOf="@+id/view.detail.image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/text_list_size"
         android:text="9.7"/>
 
     <TextView
@@ -45,14 +48,16 @@
         android:layout_toRightOf="@+id/view.detail.image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/text_list_size"
         android:text="10"/>
 
     <TextView
         android:id="@+id/view.detail.description"
         android:layout_below="@id/view.detail.image"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:textSize="@dimen/text_list_size"
         android:text="@string/some_text_detail"/>
 
 
