@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="card_radius">10dp</dimen>
-    <dimen name="padding_all">20dp</dimen>
-    <dimen name="padding_dialog">35dp</dimen>
+    <dimen name="padding_all_twenty">20dp</dimen>
+    <dimen name="padding_all_thirtty_five">35dp</dimen>
+    <dimen name="padding_top_ten">10dp</dimen>
+    <dimen name="padding_top_twenty">20dp</dimen>
+    <dimen name="padding_top_trirty">30dp</dimen>
+    <dimen name="text_size_title">19sp</dimen>
 </resources>
