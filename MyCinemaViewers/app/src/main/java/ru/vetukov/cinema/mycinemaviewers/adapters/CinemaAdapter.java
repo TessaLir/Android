@@ -1,5 +1,6 @@
 package ru.vetukov.cinema.mycinemaviewers.adapters;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import ru.vetukov.cinema.mycinemaviewers.CinemaInfoActivity;
 import ru.vetukov.cinema.mycinemaviewers.R;
 import ru.vetukov.cinema.mycinemaviewers.objects.Film;
 
@@ -71,6 +73,10 @@ public class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.CinemaHold
             Film film = films.get(getAdapterPosition());
             String msg = String.format("Вы щелкнули по фильму: %s", film.getName());
             Log.d("CinemaAdapter", msg);
+
+            Intent intent = new Intent(v.getContext(), CinemaInfoActivity.class);
+            intent.putExtra("FILM", film);
+            v.getContext().startActivity(intent);
         }
     }
 }
