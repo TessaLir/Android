@@ -1,6 +1,11 @@
 package ru.vetukov.cinema.mycinemaviewers.objects;
 
-public class Film {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import ru.vetukov.cinema.mycinemaviewers.adapters.CinemaAdapter;
+
+public class Film implements Parcelable {
 
     private String  mLocalName;
     private String  mName;
@@ -22,6 +27,20 @@ public class Film {
         mDate = date;
         mImageSRC = imageSRC;
         mDescription = description;
+    }
+
+    public Film(Parcel in) {
+        String[] data = new String[7];
+        in.readStringArray(data);
+
+        mName           = data[0];
+        mLocalName      = data[1];
+        mReting         = data[2];
+        mCommentCount   = Integer.parseInt(data[3]);
+        mDate           = data[4];
+        mImageSRC       = data[5];
+        mDescription    = data[6];
+
     }
 
     public String getLocalName() {
@@ -80,4 +99,33 @@ public class Film {
         mCommentCount = commentCount;
     }
 
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeStringArray(new String[] {mName
+                                           ,mLocalName
+                                           ,mReting
+                                           ,String.format("%d", mCommentCount)
+                                           ,mDate
+                                           ,mImageSRC
+                                           ,mDescription });
+    }
+
+    public static final Parcelable.Creator<Film> CREATOR = new Parcelable.Creator<Film>() {
+
+        @Override
+        public Film createFromParcel(Parcel source) {
+            return new Film(source);
+        }
+
+        @Override
+        public Film[] newArray(int size) {
+            return new Film[size];
+        }
+    };
 }
