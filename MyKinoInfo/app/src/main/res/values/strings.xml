@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyKinoInfo</string>
+    <string name="view_text_na">N/A</string>
 </resources>
