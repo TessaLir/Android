@@ -1,60 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding_list_all"
     tools:context=".FilmActivity">
 
-    <TextView
-        android:id="@+id/view.detail.localname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text="Гарри Поллер"/>
-
-    <ImageView
-        android:id="@+id/view.detail.image"
-        android:layout_below="@+id/view.detail.localname"
-        android:layout_alignParentLeft="true"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:layout_marginRight="15dp"
-        android:background="#ccc"/>
-
-    <TextView
-        android:id="@+id/view.detail.name"
-        android:layout_below="@+id/view.detail.localname"
-        android:layout_toRightOf="@+id/view.detail.image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Harry Potter"/>
-
-    <TextView
-        android:id="@+id/view.detail.rating"
-        android:layout_below="@+id/view.detail.name"
-        android:layout_toRightOf="@+id/view.detail.image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="9.7"/>
-
-    <TextView
-        android:id="@+id/view.detail.countcomments"
-        android:layout_below="@+id/view.detail.rating"
-        android:layout_toRightOf="@+id/view.detail.image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10"/>
-
-    <TextView
-        android:id="@+id/view.detail.description"
-        android:layout_below="@id/view.detail.image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/some_text_detail"/>
-
-
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
