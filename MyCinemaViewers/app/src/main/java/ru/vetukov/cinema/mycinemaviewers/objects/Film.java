@@ -1,6 +1,6 @@
 package ru.vetukov.cinema.mycinemaviewers.objects;
 
-public class Cinema {
+public class Film {
 
     private String  mLocalName;
     private String  mName;
@@ -10,14 +10,14 @@ public class Cinema {
     private String  mReting;
     private int     mCommentCount;
 
-    public Cinema(String localName, String name, String reting, int commentCount) {
+    public Film(String localName, String name, String reting, int commentCount) {
         mLocalName = localName;
         mName = name;
         mReting = reting;
         mCommentCount = commentCount;
     }
 
-    public Cinema(String localName, String name, String date, String imageSRC, String description, String reting, int commentCount) {
+    public Film(String localName, String name, String date, String imageSRC, String description, String reting, int commentCount) {
         this(localName, name, reting, commentCount);
         mDate = date;
         mImageSRC = imageSRC;
