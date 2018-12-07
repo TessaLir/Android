@@ -29,15 +29,10 @@ public class MainActivity extends AppCompatActivity implements Listener {
     public void btnClick(Object fragment) {
         if (fragment instanceof AuthFragment) {
 
-            EditText mETFName   = ((AuthFragment) fragment).getActivity().findViewById(R.id.edit_login);
-            EditText mETLName   = ((AuthFragment) fragment).getActivity().findViewById(R.id.edit_login);
-            EditText mETPatron  = ((AuthFragment) fragment).getActivity().findViewById(R.id.edit_login);
-            EditText mETServer  = ((AuthFragment) fragment).getActivity().findViewById(R.id.edit_login);
-
-            User user = new User(mETFName.getText().toString()
-                                ,mETLName.getText().toString()
-                                ,mETPatron.getText().toString()
-                                ,mETServer.getText().toString());
+            User user = new User(((AuthFragment) fragment).getTVLogin().getText().toString()
+                                ,((AuthFragment) fragment).getTVPassword().getText().toString()
+                                ,((AuthFragment) fragment).getTVServer().getText().toString()
+                                ,((AuthFragment) fragment).getTVRealm().getText().toString());
 
             Toast.makeText(this, user.getLogin(), Toast.LENGTH_SHORT).show();
         }

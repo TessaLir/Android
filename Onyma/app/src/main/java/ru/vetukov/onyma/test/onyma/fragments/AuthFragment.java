@@ -9,15 +9,37 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import ru.vetukov.onyma.test.onyma.R;
 
 public class AuthFragment extends Fragment {
 
-
     private Listener mListener;
 
     private Button btnEntry;
+
+    private TextView mTVLogin;
+    private TextView mTVPassword;
+    private TextView mTVServer;
+    private TextView mTVRealm;      // Тут может быть произведена замена на Spinner.
+
+
+    public TextView getTVLogin() {
+        return mTVLogin;
+    }
+
+    public TextView getTVPassword() {
+        return mTVPassword;
+    }
+
+    public TextView getTVServer() {
+        return mTVServer;
+    }
+
+    public TextView getTVRealm() {
+        return mTVRealm;
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -37,13 +59,17 @@ public class AuthFragment extends Fragment {
 
         btnEntry = view.findViewById(R.id.button_enter);
 
+        mTVLogin    = view.findViewById(R.id.edit_login);
+        mTVPassword = view.findViewById(R.id.edit_password);
+        mTVServer   = view.findViewById(R.id.edit_server);
+        mTVRealm    = view.findViewById(R.id.edit_realm);
+
         btnEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mListener.btnClick(AuthFragment.this);
             }
         });
-
     }
 
 }

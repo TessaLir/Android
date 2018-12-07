@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import ru.vetukov.test.cathouse.data.HotelContract;
+
 public class EditorActivity extends AppCompatActivity {
 
     private EditText mNameEditText;
@@ -55,11 +57,11 @@ public class EditorActivity extends AppCompatActivity {
                 String selection = (String) parent.getItemAtPosition(position);
                 if (!TextUtils.isEmpty(selection)) {
                     if (selection.equals(getString(R.string.gender_female))) {
-                        mGender = 0;
+                        mGender = HotelContract.GuestEntry.GENDER_FAMALE;
                     } else if (selection.equals(getString(R.string.gender_male))) {
-                        mGender = 1;
+                        mGender = HotelContract.GuestEntry.GENDER_MALE;
                     } else {
-                        mGender = 2;
+                        mGender = HotelContract.GuestEntry.GENDER_UNKNOWN;
                     }
                 }
             }
