@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Onyma</string>
+
+    <string-array name="spinner_language">
+        <item>Русский</item>
+        <item>English</item>
+    </string-array>
+</resources>

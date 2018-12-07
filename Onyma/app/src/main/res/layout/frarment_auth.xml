@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/padding_all"
+    android:background="@color/view_background_lite">
+
+    <android.support.v7.widget.CardView
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/card_radius"
+        app:cardBackgroundColor="@color/view_background_dialog">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_dialog">
+
+            <TextView
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ccc"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:text="Вход"/>
+
+            <Spinner
+                android:id="@+id/spinner.languege"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:entries="@array/spinner_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/view.text.login"
+                android:layout_below="@+id/spinner.languege"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Логин"/>
+
+            <EditText
+                android:id="@+id/edit.login"
+                android:layout_below="@+id/view.text.login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"  />
+
+            <TextView
+                android:id="@+id/view.text.password"
+                android:layout_below="@+id/edit.login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Пароль"/>
+
+            <EditText
+                android:id="@+id/edit.password"
+                android:layout_below="@+id/view.text.password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/view.text.server"
+                android:layout_below="@+id/edit.password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сервер"/>
+
+            <EditText
+                android:id="@+id/edit.server"
+                android:layout_below="@+id/view.text.server"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"  />
+
+            <TextView
+                android:id="@+id/view.text.realm"
+                android:layout_below="@+id/edit.server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Команда"/>
+
+            <EditText
+                android:id="@+id/edit.realm"
+                android:layout_below="@+id/view.text.realm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"  />
+
+            <Button
+                android:id="@+id/button.enter"
+                android:layout_below="@+id/edit.realm"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_auth_style"
+                android:text="Вход"/>
+
+            <TextView
+                android:id="@+id/view.text.repair"
+                android:layout_below="@+id/edit.realm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Восстановить пароль"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>
