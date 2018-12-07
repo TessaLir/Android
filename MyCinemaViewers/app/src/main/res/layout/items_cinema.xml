@@ -37,7 +37,7 @@
         android:text="@string/view_text_na" />
 
     <TextView
-        android:id="@+id/view.text.comments.count"
+        android:id="@+id/item.text.comments.count"
         android:layout_below="@id/item.text.reting"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
