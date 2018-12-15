@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import retrofit2.Retrofit;
 import ru.vetukov.cinema.mycinemaviewers.CinemaInfoActivity;
 import ru.vetukov.cinema.mycinemaviewers.R;
 import ru.vetukov.cinema.mycinemaviewers.objects.Film;
@@ -18,9 +19,11 @@ import ru.vetukov.cinema.mycinemaviewers.objects.Film;
 public class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.CinemaHolder> {
 
     private List<Film> films;
+    private Retrofit mRetrofit;
 
-    public CinemaAdapter(List<Film> films) {
+    public CinemaAdapter(List<Film> films, Retrofit retrofit) {
         this.films = films;
+        this.mRetrofit = retrofit;
     }
 
     @NonNull
@@ -37,10 +40,16 @@ public class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.CinemaHold
     public void onBindViewHolder(@NonNull CinemaHolder cinemaHolder, int i) {
         Film film = films.get(i);
 
-        cinemaHolder.mLNmae.setText(film.getLocalName());
-        cinemaHolder.mName.setText(film.getName());
+        cinemaHolder.mLNmae.setText(getName(film));
+        cinemaHolder.mName.setText(film.getLocalName());
         cinemaHolder.mRating.setText(film.getReting());
         cinemaHolder.mCCount.setText(film.getCommentCount());
+    }
+
+    private String getName(Film film) {
+        return (film.getName().length() < 25)
+                ? film.getName()
+                : film.getName().substring(0, 24) + "...";
     }
 
     @Override
@@ -71,7 +80,7 @@ public class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.CinemaHold
         @Override
         public void onClick(View v) {
             Film film = films.get(getAdapterPosition());
-            String msg = String.format("Вы щелкнули по фильму: %s", film.getName());
+            String msg = String.format("Вы щелкнули по фильму: %s", getName(film));
             Log.d("CinemaAdapter", msg);
 
             Intent intent = new Intent(v.getContext(), CinemaInfoActivity.class);
