@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import ru.vetukov.cinema.mycinemaviewers.objects.Film;
 
 public class CinemaInfoActivity extends AppCompatActivity {
@@ -23,11 +25,12 @@ public class CinemaInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cinema_info);
 
-        mTVLName        = findViewById(R.id.view_detail_localname);
-        mTVName         = findViewById(R.id.view_detail_name);
+        mTVLName        = findViewById(R.id.view_detail_name);
+        mTVName         = findViewById(R.id.view_detail_localname);
         mTVRating       = findViewById(R.id.view_detail_rating);
         mTVCComments    = findViewById(R.id.view_detail_countcomments);
-
+        mTVDescription  = findViewById(R.id.view_detail_description);
+        mIVAfisha       = findViewById(R.id.view_detail_image);
 
         Intent intent = getIntent();
 
@@ -37,7 +40,14 @@ public class CinemaInfoActivity extends AppCompatActivity {
         mTVName.setText(film.getName());
         mTVRating.setText(film.getReting());
         mTVCComments.setText(film.getCommentCount());
+        mTVDescription.setText(film.getDescription());
 
+        Picasso
+                .with(getBaseContext())
+                .load(film.getImageSRC())
+                .fit()
+                .centerCrop()
+                .into(mIVAfisha);
 
     }
 }
