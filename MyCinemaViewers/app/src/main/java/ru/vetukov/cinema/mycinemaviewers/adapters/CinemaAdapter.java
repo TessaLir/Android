@@ -1,6 +1,7 @@
 package ru.vetukov.cinema.mycinemaviewers.adapters;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -9,38 +10,59 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Retrofit;
 import ru.vetukov.cinema.mycinemaviewers.CinemaInfoActivity;
 import ru.vetukov.cinema.mycinemaviewers.R;
+import ru.vetukov.cinema.mycinemaviewers.application.KudaGo;
 import ru.vetukov.cinema.mycinemaviewers.objects.Film;
 
 public class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.CinemaHolder> {
 
     private List<Film> films;
-    private Retrofit mRetrofit;
 
-    public CinemaAdapter(List<Film> films, Retrofit retrofit) {
-        this.films = films;
-        this.mRetrofit = retrofit;
+    private Retrofit retrofit;
+
+    private boolean onLoad;
+
+    private static KudaGo go;
+
+    public CinemaAdapter() {
+        this.films = new ArrayList<>();
+
+        go = new KudaGo();
+
+        new RunAuth().execute();
+
     }
 
     @NonNull
     @Override
     public CinemaHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+
+
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.items_cinema
                                                                        ,viewGroup
                                                                        ,false);
+
 
         return new CinemaHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CinemaHolder cinemaHolder, int i) {
+
+        if (i > (films.size() - 5) && !onLoad)
+        {
+            onLoad = true;
+            new RunAuth().execute();
+        }
+
         Film film = films.get(i);
 
-        cinemaHolder.mLNmae.setText(getName(film));
+        cinemaHolder.mLNmae.setText(i + " - " + getName(film));
         cinemaHolder.mName.setText(film.getLocalName());
         cinemaHolder.mRating.setText(film.getReting());
         cinemaHolder.mCCount.setText(film.getCommentCount());
@@ -88,4 +110,51 @@ public class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.CinemaHold
             v.getContext().startActivity(intent);
         }
     }
+
+
+
+    class RunAuth extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            go.getFilmList();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            while(true) {
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                films.addAll(go.getFilms());
+
+
+                if (go.isOnStop()) {
+                    break;
+                }
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... voids) {
+
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            notifyDataSetChanged();
+            onLoad = false;
+        }
+
+    }
+
 }
