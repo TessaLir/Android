@@ -17,7 +17,7 @@ import ru.vetukov.cinema.mycinemaviewers.service.KudaGoService;
 
 public class KudaGo extends Application {
 
-    public static final int FILM_SIZE_LOAD = 100;
+    public static final int FILM_SIZE_LOAD = 20;
 
     public static int filmsPage = 0;
 
@@ -26,10 +26,10 @@ public class KudaGo extends Application {
 
     private List<Film> films;
 
+    boolean onStop;
 
     public KudaGo() {
 
-        films = new ArrayList<>();
 
         retrofit = new Retrofit.Builder().baseUrl("https://kudago.com/")
                                          .addConverterFactory(GsonConverterFactory.create())
@@ -40,9 +40,13 @@ public class KudaGo extends Application {
 
     public void getFilmList() {
 //String localName, String name, String date, String imageSRC, String description, String reting, int commentCount
+        onStop = false;
+
         String[] arr = new String[] {
                 "title,original_title,id,comments_count,year,poster,body_text"
         };
+
+        films = new ArrayList<>();
 
         Call<CinemaListExample> call = service.getCinemaList(++filmsPage, FILM_SIZE_LOAD, arr);
         call.enqueue(new MyAsync<CinemaListExample>());
@@ -59,6 +63,7 @@ public class KudaGo extends Application {
                 List<CinemaListExample.Result> list = ((CinemaListExample) example).getResults();
 
                 for (CinemaListExample.Result el : list) {
+                    Log.d("FILM",el.getId().toString());
                     films.add(new Film(el.getOriginalTitle()
                             , el.getTitle()
                             , el.getYear().toString()
@@ -68,6 +73,8 @@ public class KudaGo extends Application {
                             , el.getCommentsCount()));
                 }
             }
+
+            onStop = true;
 
         }
 
@@ -80,5 +87,10 @@ public class KudaGo extends Application {
 
     public List<Film> getFilms() {
         return films;
+    }
+
+
+    public boolean isOnStop() {
+        return onStop;
     }
 }
