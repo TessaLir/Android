@@ -17,26 +17,16 @@ import ru.vetukov.cinema.mycinemaviewers.objects.Film;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Film> films;
 
     private RecyclerView recycler;
     private CinemaAdapter adapter;
 
-    private static KudaGo go;
-
-
-    private RecyclerView.Recycler retrifit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        films = new ArrayList(){};
-
-        go = new KudaGo();
-
-        go.getFilmList();
 
         recycler = findViewById(R.id.view_filmlist);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -49,53 +39,14 @@ public class MainActivity extends AppCompatActivity {
 
         recycler.setLayoutManager(linearLayoutManager);
 
+        adapter = new CinemaAdapter();
 
-        new RunAuth().execute();
+        recycler.setAdapter(adapter);
+
 
     }
 
 
 
 
-    class RunAuth extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-
-            while(true) {
-
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                films.addAll(go.getFilms());
-
-
-                if (films.size() > 0) break;
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onProgressUpdate(Void... voids) {
-
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-
-            adapter = new CinemaAdapter(films, retrifit);
-
-            recycler.setAdapter(adapter);
-        }
-
-    }
 }
