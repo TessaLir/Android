@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/button.list"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/button_reverce"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_reverce_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_zero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_one" />
+
+    <Button
+        android:id="@+id/button_zero"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_zero_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_dot"
+        app:layout_constraintStart_toEndOf="@+id/button_reverce"
+        app:layout_constraintTop_toBottomOf="@+id/button_two" />
+
+    <Button
+        android:id="@+id/button_dot"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_dot_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_result"
+        app:layout_constraintStart_toEndOf="@+id/button_zero"
+        app:layout_constraintTop_toBottomOf="@+id/button_three" />
+
+    <Button
+        android:id="@+id/button_result"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_result_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_dot"
+        app:layout_constraintTop_toBottomOf="@+id/button_six" />
+
+    <Button
+        android:id="@+id/button_one"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_one_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_reverce"
+        app:layout_constraintEnd_toStartOf="@+id/button_two"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_four" />
+
+    <Button
+        android:id="@+id/button_two"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_two_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_zero"
+        app:layout_constraintEnd_toStartOf="@+id/button_three"
+        app:layout_constraintStart_toEndOf="@+id/button_one"
+        app:layout_constraintTop_toBottomOf="@+id/button_five" />
+
+    <Button
+        android:id="@+id/button_three"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_three_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_dot"
+        app:layout_constraintEnd_toStartOf="@+id/button_result"
+        app:layout_constraintStart_toEndOf="@+id/button_two"
+        app:layout_constraintTop_toBottomOf="@+id/button_six" />
+
+    <Button
+        android:id="@+id/button_plus"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_plus_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_six"
+        app:layout_constraintTop_toBottomOf="@+id/button_minus" />
+
+    <Button
+        android:id="@+id/button_four"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_four_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_one"
+        app:layout_constraintEnd_toStartOf="@+id/button_five"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_seven" />
+
+    <Button
+        android:id="@+id/button_five"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_five_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_two"
+        app:layout_constraintEnd_toStartOf="@+id/button_six"
+        app:layout_constraintStart_toEndOf="@+id/button_four"
+        app:layout_constraintTop_toBottomOf="@+id/button_eight" />
+
+    <Button
+        android:id="@+id/button_six"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_six_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_three"
+        app:layout_constraintEnd_toStartOf="@+id/button_plus"
+        app:layout_constraintStart_toEndOf="@+id/button_five"
+        app:layout_constraintTop_toBottomOf="@+id/button_nine" />
+
+    <Button
+        android:id="@+id/button_minus"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_minus_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_nine"
+        app:layout_constraintTop_toBottomOf="@+id/button_multy" />
+
+    <Button
+        android:id="@+id/button_eight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_eight_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_five"
+        app:layout_constraintEnd_toStartOf="@+id/button_nine"
+        app:layout_constraintStart_toEndOf="@+id/button_seven"
+        app:layout_constraintTop_toBottomOf="@+id/button_remember" />
+
+    <Button
+        android:id="@+id/button_seven"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_seven_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_four"
+        app:layout_constraintEnd_toStartOf="@+id/button_eight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_delete" />
+
+    <Button
+        android:id="@+id/button_nine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_nine_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_six"
+        app:layout_constraintEnd_toStartOf="@+id/button_minus"
+        app:layout_constraintStart_toEndOf="@+id/button_eight"
+        app:layout_constraintTop_toBottomOf="@+id/button_devision" />
+
+    <Button
+        android:id="@+id/button_multy"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/button_multy_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_minus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_devision"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_remember"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/button_remember_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_eight"
+        app:layout_constraintEnd_toStartOf="@+id/button_devision"
+        app:layout_constraintStart_toEndOf="@+id/button_delete"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_delete"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/button_delete_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_seven"
+        app:layout_constraintEnd_toStartOf="@+id/button_remember"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_devision"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/button_devision_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_nine"
+        app:layout_constraintEnd_toStartOf="@+id/button_multy"
+        app:layout_constraintStart_toEndOf="@+id/button_remember"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

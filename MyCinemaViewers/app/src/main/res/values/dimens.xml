@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="text_list_size_local">22sp</dimen>
-    <dimen name="padding_list_all">15dp</dimen>
-    <dimen name="text_list_size">18sp</dimen>
-    <dimen name="padding_all">10dp</dimen>
-</resources>

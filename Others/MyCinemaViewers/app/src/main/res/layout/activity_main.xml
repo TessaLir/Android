@@ -1,0 +1,56 @@
+<<<<<<< HEAD:MyCinemaViewers/app/src/main/res/layout/activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_all"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/view.progress"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/view.filmlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+
+
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_all"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/view.progress"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/view.filmlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+
+    </ScrollView>
+
+>>>>>>> master-2:Others/MyCinemaViewers/app/src/main/res/layout/activity_main.xml
+</RelativeLayout>
