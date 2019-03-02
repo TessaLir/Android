@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="colorMyPinckPrimary">#9c27b0</color>
+    <color name="colorMyPinckPrimaryDark">#7b1fa2</color>
+    <color name="colorMyPinckAccent">#40c4ff</color>
+
+    <color name="colorMyYellowPrimary">#ffeb3b</color>
+    <color name="colorMyYellowPrimaryDark">#fbc02d</color>
+    <color name="coloMyYellowrAccent">#8bc34a</color>
+
+    <color name="colorMyBrownTextIcons">#FFFFFF</color>
+    <color name="colorMyBrownPrimary">#795548</color>
+    <color name="colorMyBrownPrimaryDark">#5d4037</color>
+    <color name="colorMyBrownLightPrimaryDark">#d7ccc8</color>
+    <color name="colorMyBrownAccent">#ff5722</color>
+    <color name="colorMyBrownPrimaryText">#212121</color>
+    <color name="colorMyBrownSecondaryText">#757575</color>
+    <color name="colorMyBrownDriverColor">#BDBDBD</color>
 </resources>
