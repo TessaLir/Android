@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculatorActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="RESULT"
+        android:id="@+id/result.memory"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/result_memory_text_height"
+        android:textSize="@dimen/result_memory_text_size"
+        android:paddingTop="@dimen/padding_text_view"
+        android:paddingRight="@dimen/padding_text_view"
+        android:gravity="end"
+        android:layout_gravity="center|end"/>
+
+    <TextView
+        android:text="RESULT"
+        android:id="@+id/result.basic"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/result_basic_text_height"
+        android:textSize="@dimen/result_basic_text_size"
+        android:padding="@dimen/padding_text_view"
+        android:gravity="end"
+        android:layout_gravity="center|end"/>
+
+    <include layout="@layout/button_items" />
+
+</LinearLayout>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="result_memory_text_height">30dp</dimen>
-    <dimen name="result_basic_text_height">50dp</dimen>
-    <dimen name="result_basic_text_size">25sp</dimen>
-    <dimen name="result_memory_text_size">15sp</dimen>
-    <dimen name="padding_text_view">10dp</dimen>
-</resources>
