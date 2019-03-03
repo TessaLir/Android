@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_dialog_dialer" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="250dp"
+        app:counterEnabled="false"
+        app:counterOverflowTextAppearance="@style/TooManySymbols">
+
+        <EditText
+            android:id="@+id/editTextInNew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="подсказка 2"
+            android:inputType="text" />
+    </android.support.design.widget.TextInputLayout>
+
+    <include layout="@layout/bottom_sheet" />
+
+</android.support.design.widget.CoordinatorLayout>
