@@ -20,23 +20,27 @@ import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 
+import butterknife.BindString;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String EMPTY_STRING = "";
 
     private static final String TAG = "MainActivity";
-
-    private ConstraintLayout mConstraintLayout;
-    private TextInputLayout mTILFirst;
-    private Button mButton;
-
     private Snackbar mSnackbar;
-    private EditText mETFirst;
-    private EditText mETSecond;
 
-    private String mInservText;
-    private String textSnackbarVisible;
-    private String textSnackbarInvisible;
+    @BindView(R.id.mainLayout) ConstraintLayout mConstraintLayout;
+    @BindView(R.id.inputLayout1) TextInputLayout mTILFirst;
+    @BindView(R.id.button) Button mButton;
+    @BindView(R.id.editText1) EditText mETFirst;
+    @BindView(R.id.editText2) EditText mETSecond;
+
+    @BindString(R.string.main_activity_snackbar_visible) String mInservText;
+    @BindString(R.string.main_activity_snackbar_invisible) String textSnackbarVisible;
+    @BindString(R.string.main_activity_just_click) String textSnackbarInvisible;
 
     public static Snackbar getCustomSnackbar(View parentLayout, String message) {
         return Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG);
@@ -46,16 +50,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         initUI();
+        initSnackbar();
+    }
 
-        mButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mSnackbar.show();
-            }
-        });
+    @OnClick(R.id.button)
+    void  buttonClick() { mSnackbar.show(); }
 
+    private void initSnackbar() {
         View.OnClickListener snackbarOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,20 +85,14 @@ public class MainActivity extends AppCompatActivity {
                 mETSecond.setText(textSnackbarVisible);
             }
         });
-
     }
 
     private void initUI() {
-        initStrings();
+        addEditTextListening();
+    }
 
-        mConstraintLayout = findViewById(R.id.mainLayout);
-        mButton = findViewById(R.id.button);
-        mTILFirst = findViewById(R.id.inputLayout1);
-        mETFirst = findViewById(R.id.editText1);
-        mETSecond = findViewById(R.id.editText2);
-
+    private void addEditTextListening() {
         mETFirst.setOnEditorActionListener(new OurTextListener(new WeakReference<>(this)));
-
         mETFirst.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -118,12 +116,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void initStrings() {
-        textSnackbarVisible = getResources().getString(R.string.main_activity_snackbar_visible);
-        textSnackbarInvisible = getResources().getString(R.string.main_activity_snackbar_invisible);
-        mInservText = getResources().getString(R.string.main_activity_just_click);
-    }
-
     private void showError() {
         mTILFirst.setError("Not Email");
     }
@@ -143,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
             this.mainActivityWeakReference = mainActivityWeakReference;
         }
 
-
         @Override
         public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
             MainActivity mainActivity = mainActivityWeakReference.get();
@@ -157,5 +148,4 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
-
 }
