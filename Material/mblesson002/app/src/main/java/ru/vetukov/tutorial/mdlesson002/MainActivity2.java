@@ -9,20 +9,41 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity2 extends AppCompatActivity {
 
     private static final String TAG = "TestBSS";
-    private EditText text;
     private BottomSheetBehavior sheetBehavior;
-    private FloatingActionButton fab;
+
+    @BindView(R.id.editTextInNew) EditText text;
+    @BindView(R.id.design_bottom_sheet) View bottomSheetLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_main);
+        ButterKnife.bind(this);
 
         initUI();
 
+    }
+
+    private void initUI() {
+        sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
+        sheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+
+        addCallbackToSheet();
+    }
+
+    @OnClick({R.id.fab1, R.id.fab2})
+    void showSheet() {
+        sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+    }
+
+    private void addCallbackToSheet() {
         sheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
@@ -37,14 +58,6 @@ public class MainActivity2 extends AppCompatActivity {
 
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-
-            }
-        });
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 
             }
         });
@@ -71,14 +84,6 @@ public class MainActivity2 extends AppCompatActivity {
                 Log.e(TAG, "unsupported status");
                 break;
         }
-    }
-
-    private void initUI() {
-        text = findViewById(R.id.editTextInNew);
-        View view = findViewById(R.id.design_bottom_sheet);
-        sheetBehavior = BottomSheetBehavior.from(view);
-        sheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-        fab = findViewById(R.id.fab);
     }
 
 }
