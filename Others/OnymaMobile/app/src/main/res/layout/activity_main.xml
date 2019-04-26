@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:text="localhost.ru:4443"/>
+                android:text="https://tut-site:4443"/>
 
             <!-- КОМАНДА -->
             <TextView
