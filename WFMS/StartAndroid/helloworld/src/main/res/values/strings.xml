@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HelloWorld</string>
+    <string name="main_title_text">Привет мир!!!</string>
 </resources>
