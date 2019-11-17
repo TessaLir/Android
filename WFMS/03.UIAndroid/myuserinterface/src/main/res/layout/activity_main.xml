@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingRight="@dimen/main_padding"
+        android:paddingLeft="@dimen/main_padding"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/main.et.one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number|numberDecimal|numberSigned"
+            android:hint="Число один"/>
+
+        <EditText
+            android:id="@+id/main.et.two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number|numberDecimal|numberSigned"
+            android:hint="Число два"/>
+
+        <Button
+            android:id="@+id/main.btn.button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Вычислиь сумму" />
+
+    </LinearLayout>
+
+</RelativeLayout>

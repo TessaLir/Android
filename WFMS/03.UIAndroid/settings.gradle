@@ -1,2 +1,2 @@
-include ':mylayout', ':sizeanndposition'
+include ':mylayout', ':sizeanndposition', ':myuserinterface'
 rootProject.name='03.UIAndroid'
