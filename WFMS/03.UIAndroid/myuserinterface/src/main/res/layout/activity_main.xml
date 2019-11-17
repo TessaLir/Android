@@ -19,20 +19,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number|numberDecimal|numberSigned"
-            android:hint="Число один"/>
+            android:hint="@string/main_et_one"/>
 
         <EditText
             android:id="@+id/main.et.two"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number|numberDecimal|numberSigned"
-            android:hint="Число два"/>
+            android:hint="@string/main_et_two"/>
 
         <Button
             android:id="@+id/main.btn.button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Вычислиь сумму" />
+            android:text="@string/main_btn_get" />
 
     </LinearLayout>
 

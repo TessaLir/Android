@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="main_padding">25dp</dimen>
+    <dimen name="main_btn_size_text">23dp</dimen>
+    <dimen name="main_tv_size">40sp</dimen>
 </resources>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">myuserinterface</string>
+    <string name="main_et_one">Число один</string>
+    <string name="main_et_two">Число два</string>
+    <string name="main_btn_get">Вычислиь сумму</string>
+    <string name="main_btn_back">Вернуться назад</string>
 </resources>
