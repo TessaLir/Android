@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">sizeanndposition</string>
+    <string name="main_tv_text">TextView</string>
+    <string name="main_cb_check">CheckBox</string>
+    <string name="main_btn_button">Submit</string>
+</resources>

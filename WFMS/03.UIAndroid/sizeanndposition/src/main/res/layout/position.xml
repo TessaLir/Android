@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <Button
+        android:id="@+id/main.btn.button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="100dp"
+        android:padding="30dp"
+        android:text="@string/main_btn_button" />
+
+    <ToggleButton
+        android:id="@+id/main.tog.button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/main.btn.button"
+        android:layout_marginTop="@dimen/main_padding_top"
+        android:text="Togle Button"
+        android:textOff="Выключен"
+        android:textOn="Включен"/>
+
+</RelativeLayout>
