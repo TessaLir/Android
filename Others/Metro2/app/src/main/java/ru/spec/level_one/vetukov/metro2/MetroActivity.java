@@ -37,7 +37,6 @@ public class MetroActivity extends AppCompatActivity implements MetroAdapter.OnI
         setContentView(R.layout.activity_metro);
         rvMetro = (RecyclerView) findViewById(R.id.rvMetro);
 
-
         adapter = new MetroAdapter(metroList);
         adapter.setOnItemListener(this);
 
