@@ -1,0 +1,2 @@
+include ':helloworld'
+rootProject.name='StartAndroid'
