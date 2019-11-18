@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">01_linearlaouy</string>
+    <string name="main_text_01">Text 01</string>
+    <string name="main_text_02">Text 02</string>
+    <string name="main_text_03">Text 03</string>
+    <string name="main_text_04">Text 04</string>
+    <string name="main_click_1">Click 1</string>
+    <string name="main_click_2">Click 2</string>
+    <string name="main_click_3">Click 3</string>
+</resources>
