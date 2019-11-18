@@ -8,6 +8,9 @@
     <string name="main_btn_enter">ВОЙТИ</string>
     <string name="main_btn_back">НАЗАД</string>
     <string name="main_tv_n_a">N/A</string>
+    <string name="main_btn_registration">Регистрация</string>
+    <string name="main_tv_registration">Регистрация</string>
+    <string name="main_et_name">Имя</string>
 
     <string name="main_tv_result_true">Привет!</string>
     <string name="main_tv_result_false">Ошибка авторизации!</string>

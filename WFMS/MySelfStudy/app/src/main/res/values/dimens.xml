@@ -2,4 +2,6 @@
 <resources>
     <dimen name="main_margin_separator">25dp</dimen>
     <dimen name="main_padding_all">16dp</dimen>
+    <dimen name="main_margin_et">95dp</dimen>
+    <dimen name="main_padding_top_title">50dp</dimen>
 </resources>

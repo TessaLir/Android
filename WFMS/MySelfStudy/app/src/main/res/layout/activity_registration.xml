@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/main_padding_all"
+    tools:context=".Utils.RegistrationActivity">
+
+    <TextView
+        android:id="@+id/main.tv.title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:text="@string/main_tv_registration" />
+
+    <EditText
+        android:id="@+id/main.et.name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main.tv.title"
+        android:layout_marginTop="@dimen/main_padding_top_title"
+        android:layout_marginLeft="@dimen/main_margin_et"
+        android:layout_marginStart="@dimen/main_margin_et"
+        android:inputType="text"
+        android:hint="@string/main_et_name" />
+
+    <EditText
+        android:id="@+id/main.et.email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main.et.name"
+        android:layout_marginLeft="@dimen/main_margin_et"
+        android:layout_marginStart="@dimen/main_margin_et"
+        android:inputType="textEmailAddress"
+        android:hint="@string/main_et_email" />
+
+    <EditText
+        android:id="@+id/main.et.pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main.et.email"
+        android:layout_marginLeft="@dimen/main_margin_et"
+        android:layout_marginStart="@dimen/main_margin_et"
+        android:inputType="textPassword"
+        android:hint="@string/main_et_pwd" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBaseline="@id/main.et.name"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="@string/main_et_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBaseline="@id/main.et.email"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="@string/main_et_email" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBaseline="@id/main.et.pwd"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="@string/main_et_pwd" />
+
+    <Button
+        android:id="@+id/main.btn.registration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main.et.pwd"
+        android:layout_marginTop="@dimen/main_padding_top_title"
+        android:text="@string/main_btn_registration" />
+
+</RelativeLayout>
