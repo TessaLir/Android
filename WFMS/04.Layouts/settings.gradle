@@ -1,2 +1,2 @@
-include ':01_linearlaouy', ':02_tablelayout', ':03_framelayout', ':04_relativelayout'
+include ':01_linearlaouy', ':02_tablelayout', ':03_framelayout', ':04_relativelayout', ':05_constraintlayout'
 rootProject.name='04.Layouts'
