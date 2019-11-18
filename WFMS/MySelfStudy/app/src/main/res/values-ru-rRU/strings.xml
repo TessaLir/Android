@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MySelfStudy</string>
+    <string name="main_et_email">Email</string>
+    <string name="main_et_pwd">Пароль</string>
+    <string name="main_tv_one">РАЗ</string>
+    <string name="main_tv_two">ДВА</string>
+    <string name="main_btn_enter">ВОЙТИ</string>
+    <string name="main_btn_back">НАЗАД</string>
+    <string name="main_tv_n_a">N/A</string>
+
+    <string name="main_tv_result_true">Привет!</string>
+    <string name="main_tv_result_false">Ошибка авторизации!</string>
+</resources>

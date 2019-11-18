@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MySelfStudy</string>
+    <string name="main_et_email">Email</string>
+    <string name="main_et_pwd">Password</string>
+    <string name="main_tv_one">ONE</string>
+    <string name="main_tv_two">TWO</string>
+    <string name="main_btn_enter">ENTER</string>
+    <string name="main_btn_back">BACK</string>
+    <string name="main_tv_n_a">N/A</string>
+
+    <string name="main_tv_result_true">Hello!</string>
+    <string name="main_tv_result_false">Authorization ERROR!</string>
+</resources>
