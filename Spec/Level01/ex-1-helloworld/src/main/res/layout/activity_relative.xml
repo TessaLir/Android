@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelativeActivity">
+
+    <Button
+        android:id="@+id/main.btn.one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/main_btn_button_one" />
+
+    <Button
+        android:id="@+id/main.btn.two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="@string/main_btn_button_two" />
+
+    <Button
+        android:id="@+id/main.btn.three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main.btn.one"
+        android:layout_toEndOf="@id/main.btn.one"
+        android:layout_toStartOf="@id/main.btn.two"
+        android:text="@string/main_btn_three" />
+
+    <Button
+        android:id="@+id/main.btn.four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main.btn.three"
+        android:layout_centerHorizontal="true"
+        android:text="@string/main_btn_four" />
+
+</RelativeLayout>

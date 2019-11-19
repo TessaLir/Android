@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_margin="20dp"
+        android:padding="20dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@android:color/holo_orange_dark"
+        android:textSize="36sp"
+        android:text="@string/main_tv_hello" />
+
+    <CheckBox
+        android:id="@+id/main.ch.check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="@string/main_cb_check" />
+
+    <Button
+        android:id="@+id/main.btn.check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_btn_check" />
+
+    <Button
+        android:id="@+id/main.btn.uncheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_btn_uncheck" />
+
+</LinearLayout>

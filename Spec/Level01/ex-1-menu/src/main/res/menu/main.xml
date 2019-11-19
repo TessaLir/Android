@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/main.add"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_arrow"
+        android:title="@string/main_ic_add" />
+
+    <item
+        android:id="@+id/main.delete"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_attachment"
+        android:title="@string/main_ic_delete" />
+
+    <item
+        android:id="@+id/main.quit"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_brush"
+        android:title="@string/main_ic_quit" />
+
+</menu>

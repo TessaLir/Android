@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ex-1-HelloWorld</string>
+    <string name="main_tv_hello">Hello, world!!!</string>
+    <string name="main_cb_check">I\'m a check box!</string>
+    <string name="main_btn_check">check</string>
+    <string name="main_btn_uncheck">uncheck</string>
+    <string name="main_btn_button_one">Button ONE</string>
+    <string name="main_btn_button_two">Button TWO</string>
+    <string name="main_btn_button_three">Button Three</string>
+    <string name="main_btn_button_four">Button Four</string>
+    <string name="main_btn_button_one">Button ONE</string>
+    <string name="main_btn_button_two">Button TWO</string>
+    <string name="main_btn_three">Button THREE</string>
+    <string name="main_btn_four">Button FOUR</string>
+</resources>
