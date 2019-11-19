@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:icon="@drawable/ic_bug_report"
+        android:id="@+id/bottom.one" android:title="One"/>
+
+    <item android:icon="@drawable/ic_cancel"
+        android:id="@+id/bottom.two" android:title="Two"/>
+
+    <item android:icon="@drawable/ic_child_friendly"
+        android:id="@+id/bottom.three" android:title="Three"/>
+
+</menu>

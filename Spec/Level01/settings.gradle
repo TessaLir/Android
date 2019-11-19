@@ -1,2 +1,2 @@
-include ':ex-1-helloworld', ':ex-1-flags', ':ex-1-menu', ':ex-1-beach'
+include ':ex-1-helloworld', ':ex-1-flags', ':ex-1-menu', ':ex-1-beach', ':ex-2-menu'
 rootProject.name='Level-01'
