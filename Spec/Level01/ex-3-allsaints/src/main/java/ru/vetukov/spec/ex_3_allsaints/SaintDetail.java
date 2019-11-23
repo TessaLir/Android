@@ -42,12 +42,12 @@ public class SaintDetail extends AppCompatActivity {
 
             // В начале проверяем, есть ли такое значение
             if (intent.hasExtra(MainActivity.SAINT_RATING)) {
-                s.setRating(intent.getExtras().getFloat(MainActivity.SAINT_RATING));
+                s.setRating(intent.getExtras().getFloat(MainActivity.SAINT_RATING, -1f));
                 mSaintRating.setRating(s.getRating());
             }
 
             if (intent.hasExtra(MainActivity.SAINT_ID)) {
-                mSaintId = intent.getExtras().getInt(MainActivity.SAINT_ID);
+                mSaintId = intent.getExtras().getInt(MainActivity.SAINT_ID, -1);
 
             }
         }
@@ -64,7 +64,7 @@ public class SaintDetail extends AppCompatActivity {
         intent.putExtra(MainActivity.SAINT_ID, mSaintId);
         intent.putExtra(MainActivity.SAINT_RATING, mSaintRating.getRating());
 
-        setResult(MainActivity.RATING_REQUEST, intent);
+        setResult(RESULT_OK, intent);
 
         // Вызываем onBackPressed суперкласса, закрывая Activity
         super.onBackPressed();

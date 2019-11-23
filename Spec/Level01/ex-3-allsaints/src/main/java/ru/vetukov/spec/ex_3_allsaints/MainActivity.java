@@ -29,7 +29,7 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
     public static final String SAINT_ID = "SAINT_ID";
     public static final String SAINT_NAME = "SAINT_NAME";
@@ -79,13 +79,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
             }
         } catch (Exception e) {
-
+            ///
         }
 
         adapter = new SaintAdapter(this, R.layout.listviewitem, saints);
         lvList.setAdapter(adapter);
 
         lvList.setOnItemClickListener(this);
+        lvList.setOnItemLongClickListener(this);
 
     }
 
@@ -100,16 +101,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-
-        ///
-
         return super.onContextItemSelected(item);
     }
 
     // Вызывается при создании меню
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        if (!adapter.hasSelected()) {
+            getMenuInflater().inflate(R.menu.main, menu);
+        } else {
+            getMenuInflater().inflate(R.menu.delete, menu);
+        }
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -128,6 +130,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return true;
             case R.id.menu_add:
                 showAddDialog();
+                return true;
+            case R.id.main_delete:
+                adapter.deleteSelected();
+                invalidateOptionsMenu();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -168,28 +174,56 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Saint saint = saints.get(position);
+        if (!adapter.hasSelected()) {
+            Saint saint = saints.get(position);
 
-        Intent intent = new Intent(this, SaintDetail.class);
+            Intent intent = new Intent(this, SaintDetail.class);
 
-        intent.putExtra(SAINT_ID, position);
-        intent.putExtra(SAINT_NAME, saint.getName());
-        intent.putExtra(SAINT_RATING, saint.getRating());
+            intent.putExtra(SAINT_ID, position);
+            intent.putExtra(SAINT_NAME, saint.getName());
+            intent.putExtra(SAINT_RATING, saint.getRating());
 
-        startActivityForResult(intent, RATING_REQUEST);
+            startActivityForResult(intent, RATING_REQUEST);
+        } else {
+            toggleSelection(position);
+        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == RATING_REQUEST)
+        {
+            int id = -1;
+            float rating = -1f;
 
-        if (requestCode == RATING_REQUEST) {
-            Saint saint = saints.get(data.getExtras().getInt(SAINT_ID));
-            if (saint != null) {
-                saint.setRating(data.getExtras().getFloat(SAINT_RATING));
+            // получить из intent id
+            id = data.getIntExtra(SAINT_ID, -1);
+            // получить из intent rating
+            rating  = data.getFloatExtra(SAINT_RATING, -1f);
+
+            // если id и rating >= 0 то обновить святого , "дернуть" adapter
+            if(id >= 0 && rating >= 0)
+            {
+                saints.get(id).setRating(rating);
                 adapter.notifyDataSetChanged();
             }
+
+            return;
         }
 
+        super.onActivityResult(requestCode, resultCode, data);
     }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+        toggleSelection(position);
+        return true;
+    }
+
+    private void toggleSelection(int position) {
+        adapter.toggleSelection(position);
+        invalidateOptionsMenu();
+    }
+
 }
+
