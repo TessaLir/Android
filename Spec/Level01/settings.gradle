@@ -1,2 +1,2 @@
-include ':ex-1-helloworld', ':ex-1-flags', ':ex-1-menu', ':ex-1-beach', ':ex-2-menu', ':ex-2-lifecycle', ':ex-2-webbrowser', ':ex-2-saverestorestate', ':ex-2-intentstarter', ':ex-2-allsaintsstarter', ':ex-3-allsaints'
+include ':ex-1-helloworld', ':ex-1-flags', ':ex-1-menu', ':ex-1-beach', ':ex-2-menu', ':ex-2-lifecycle', ':ex-2-webbrowser', ':ex-2-saverestorestate', ':ex-2-intentstarter', ':ex-2-allsaintsstarter', ':ex-3-allsaints', ':ex-3-beautifulplace'
 rootProject.name='Level-01'
