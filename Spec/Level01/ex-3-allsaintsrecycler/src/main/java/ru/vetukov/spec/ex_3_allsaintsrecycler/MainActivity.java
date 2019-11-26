@@ -11,11 +11,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -29,7 +32,12 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
+import ru.vetukov.spec.ex_3_allsaintsrecycler.adapters.RecyclerSaintAdapter;
+
+public class MainActivity
+        extends AppCompatActivity
+        implements RecyclerSaintAdapter.OnItemClickListener,
+                   RecyclerSaintAdapter.OnItemLongClickListener {
 
     public static final String SAINT_ID = "SAINT_ID";
     public static final String SAINT_NAME = "SAINT_NAME";
@@ -37,17 +45,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public static final int RATING_REQUEST = 234;
 
-    private ListView lvList;
+    private RecyclerView recycler;
+    private RecyclerSaintAdapter adapter;
 
     List<Saint> saints = new ArrayList<>();
-    SaintAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lvList = findViewById(R.id.main_list);
+        recycler = findViewById(R.id.coordinator_list);
 
         // Источник данных для парсера XML из ресурсов
         InputSource mySaints = new InputSource(getResources().openRawResource(R.raw.saints));
@@ -82,11 +90,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             ///
         }
 
-        adapter = new SaintAdapter(this, R.layout.listviewitem, saints);
-        lvList.setAdapter(adapter);
+        adapter = new RecyclerSaintAdapter(saints);
 
-        lvList.setOnItemClickListener(this);
-        lvList.setOnItemLongClickListener(this);
+        recycler.setAdapter(adapter);
+        recycler.setLayoutManager(new LinearLayoutManager(this));
+        recycler.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+
+        adapter.setOnClickListener(this);
+        adapter.setOnLongClickListener(this);
+
+        ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT| ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int position = viewHolder.getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) adapter.remove(position);
+            }
+        });
+
+        helper.attachToRecyclerView(recycler);
 
     }
 
@@ -107,11 +133,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     // Вызывается при создании меню
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (!adapter.hasSelected()) {
-            getMenuInflater().inflate(R.menu.main, menu);
-        } else {
-            getMenuInflater().inflate(R.menu.delete, menu);
-        }
+        if (!adapter.hasSelected()) getMenuInflater().inflate(R.menu.main, menu);
+        else getMenuInflater().inflate(R.menu.delete, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -172,22 +195,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if (!adapter.hasSelected()) {
-            Saint saint = saints.get(position);
-
-            Intent intent = new Intent(this, SaintDetail.class);
-
-            intent.putExtra(SAINT_ID, position);
-            intent.putExtra(SAINT_NAME, saint.getName());
-            intent.putExtra(SAINT_RATING, saint.getRating());
-
-            startActivityForResult(intent, RATING_REQUEST);
-        } else {
-            toggleSelection(position);
-        }
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -214,16 +221,31 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        toggleSelection(position);
-        return true;
-    }
-
     private void toggleSelection(int position) {
         adapter.toggleSelection(position);
         invalidateOptionsMenu();
     }
 
+    @Override
+    public void onItemClick(View itemView, int position) {
+        if (!adapter.hasSelected()) {
+            Saint saint = saints.get(position);
+
+            Intent intent = new Intent(this, SaintDetail.class);
+
+            intent.putExtra(SAINT_ID, position);
+            intent.putExtra(SAINT_NAME, saint.getName());
+            intent.putExtra(SAINT_RATING, saint.getRating());
+
+            startActivityForResult(intent, RATING_REQUEST);
+        } else {
+            toggleSelection(position);
+        }
+    }
+
+    @Override
+    public void onItemLongClick(View itemView, int position) {
+        toggleSelection(position);
+    }
 }
 

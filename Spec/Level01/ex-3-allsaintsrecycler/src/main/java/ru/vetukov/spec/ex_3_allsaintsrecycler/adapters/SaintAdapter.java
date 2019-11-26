@@ -1,4 +1,4 @@
-package ru.vetukov.spec.ex_3_allsaintsrecycler;
+package ru.vetukov.spec.ex_3_allsaintsrecycler.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -17,6 +17,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
+
+import ru.vetukov.spec.ex_3_allsaintsrecycler.R;
+import ru.vetukov.spec.ex_3_allsaintsrecycler.Saint;
 
 public class SaintAdapter
         extends ArrayAdapter<Saint>
