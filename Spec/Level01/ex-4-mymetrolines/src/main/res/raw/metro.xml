@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<metro>
+	<line>
+		<name>Сокольническая</name>
+		<color>#900020</color>
+		<stations>
+			<name>Бульвар Рокоссовского</name>
+			<name>Черкизовская</name>
+			<name>Преображенская площадь</name>
+			<name>Сокольники</name>
+			<name>Красносельская</name>
+			<name>Комсомольская</name>
+			<name>Красные ворота</name>
+			<name>Чистые пруды</name>
+			<name>Лубянка</name>
+			<name>Охотный ряд</name>
+			<name>Библиотека им. Ленина</name>
+			<name>Кропоткинская</name>
+			<name>Парк культуры</name>
+			<name>Фрунзенская</name>
+			<name>Спортивная</name>
+			<name>Воробьёвы горы</name>
+			<name>Университет</name>
+			<name>Проспект Вернадского</name>
+			<name>Юго-Западная</name>
+			<name>Тропарёво</name>
+		</stations>
+	</line>
+	<line>
+		<name>Замоскворецкая</name>
+		<color>#34C924</color>
+		<stations>
+			<name>Алма-Атинская</name>
+			<name>Красногвардейская</name>
+			<name>Домодедовская</name>
+			<name>Орехово</name>
+			<name>Царицыно</name>
+			<name>Кантемировская</name>
+			<name>Каширская</name>
+			<name>Коломенская</name>
+			<name>Автозаводская</name>
+			<name>Павелецкая</name>
+			<name>Новокузнецкая</name>
+			<name>Театральная</name>
+			<name>Тверская</name>
+			<name>Маяковская</name>
+			<name>Белорусская</name>
+			<name>Динамо</name>
+			<name>Аэропорт</name>
+			<name>Сокол</name>
+			<name>Войковская</name>
+			<name>Водный стадион</name>
+			<name>Речной вокзал</name>
+		</stations>
+	</line>
+	<line>
+		<name>Арбатско-Покровская</name>
+		<color>#3E5F8A</color>
+		<stations>
+			<name>Пятницкое шоссе</name>
+			<name>Митино</name>
+			<name>Волоколамская</name>
+			<name>Мякинино</name>
+			<name>Строгино</name>
+			<name>Крылатское</name>
+			<name>Молодежная</name>
+			<name>Кунцевская</name>
+			<name>Славянский бульвар</name>
+			<name>Парк Победы</name>
+			<name>Киевская</name>
+			<name>Смоленская [глуб.]</name>
+			<name>Арбатская [глуб.]</name>
+			<name>Площадь Революции</name>
+			<name>Курская</name>
+			<name>Бауманская</name>
+			<name>Электрозаводская</name>
+			<name>Семеновская</name>
+			<name>Партизанская</name>
+			<name>Измайловская</name>
+			<name>Первомайская</name>
+			<name>Щелковская</name>
+		</stations>
+	</line>
+	<line>
+		<name>Филевская</name>
+		<color>#6495ED</color>
+		<stations>
+			<name>Александровский сад</name>
+			<name>Арбатская [мелк.]</name>
+			<name>Смоленская [мелк.]</name>
+			<name>Киевская [мелк.]</name>
+			<name>Выставочная</name>
+			<name>Международная</name>
+			<name>Студенческая</name>
+			<name>Кутузовская</name>
+			<name>Фили</name>
+			<name>Багратионовская</name>
+			<name>Филевский парк</name>
+			<name>Пионерская</name>
+			<name>Кунцевская</name>
+		</stations>
+	</line>
+	<line>
+		<name>Кольцевая</name>
+		<color>#64400F</color>
+		<stations>
+			<name>Белорусская</name>
+			<name>Новослободская</name>
+			<name>Проспект Мира</name>
+			<name>Комсомольская</name>
+			<name>Курская</name>
+			<name>Таганская</name>
+			<name>Павелецкая</name>
+			<name>Добрынинская</name>
+			<name>Октябрьская</name>
+			<name>Парк культуры</name>
+			<name>Киевская</name>
+			<name>Краснопресненская</name>
+		</stations>
+	</line>
+	<line>
+		<name>Калужско-Рижская</name>
+		<color>#CD7F32</color>
+		<stations>
+			<name>Медведково</name>
+			<name>Бабушкинская</name>
+			<name>Свиблово</name>
+			<name>Ботанический сад</name>
+			<name>ВДНХ</name>
+			<name>Алексеевская</name>
+			<name>Рижская</name>
+			<name>Проспект Мира</name>
+			<name>Сухаревская</name>
+			<name>Тургеневская</name>
+			<name>Китай-город</name>
+			<name>Третьяковская</name>
+			<name>Октябрьская</name>
+			<name>Шаболовская</name>
+			<name>Ленинский проспект</name>
+			<name>Академическая</name>
+			<name>Профсоюзная</name>
+			<name>Новые Черемушки</name>
+			<name>Калужская</name>
+			<name>Беляево</name>
+			<name>Коньково</name>
+			<name>Теплый Стан</name>
+			<name>Ясенево</name>
+			<name>Новоясеневская</name>
+		</stations>
+	</line>
+	<line>
+		<name>Таганско-Краснопресненская</name>
+		<color>#702963</color>
+		<stations>
+			<name>Жулебино</name>
+			<name>Лермонтовский проспект</name>
+			<name>Выхино</name>
+			<name>Рязанский проспект</name>
+			<name>Кузьминки</name>
+			<name>Текстильщики</name>
+			<name>Волгоградский проспект</name>
+			<name>Пролетарская</name>
+			<name>Таганская</name>
+			<name>Китай-город</name>
+			<name>Кузнецкий мост</name>
+			<name>Пушкинская</name>
+			<name>Баррикадная</name>
+			<name>Улица 1905 года</name>
+			<name>Беговая</name>
+			<name>Полежаевская</name>
+			<name>Октябрьское поле</name>
+			<name>Щукинская</name>
+			<name>Спартак</name>
+			<name>Тушинская</name>
+			<name>Сходненская</name>
+			<name>Планерная</name>
+		</stations>
+	</line>
+	<line>
+		<name>Калининская</name>
+		<color>#FFDC33</color>
+		<stations>
+			<name>Новокосино</name>
+			<name>Новогиреево</name>
+			<name>Перово</name>
+			<name>Шоссе Энтузиастов</name>
+			<name>Авиамоторная</name>
+			<name>Площадь Ильича</name>
+			<name>Марксистская</name>
+			<name>Третьяковская</name>
+			<name>Деловой центр</name>
+			<name>Парк Победы</name>
+		</stations>
+	</line>
+	<line>
+		<name>Серпуховско-Тимирязевская</name>
+		<color>#B5B8B1</color>
+		<stations>
+			<name>Алтуфьево</name>
+			<name>Бибирево</name>
+			<name>Отрадное</name>
+			<name>Владыкино</name>
+			<name>Петровско-Разумовская</name>
+			<name>Тимирязевская</name>
+			<name>Дмитровская</name>
+			<name>Савеловская</name>
+			<name>Менделеевская</name>
+			<name>Цветной бульвар</name>
+			<name>Чеховская</name>
+			<name>Боровицкая</name>
+			<name>Полянка</name>
+			<name>Серпуховская</name>
+			<name>Тульская</name>
+			<name>Нагатинская</name>
+			<name>Нагорная</name>
+			<name>Нахимовский проспект</name>
+			<name>Севастопольская</name>
+			<name>Чертановская</name>
+			<name>Южная</name>
+			<name>Пражская</name>
+			<name>Улица Академика Янгеля</name>
+			<name>Аннино</name>
+			<name>Бульвар Дмитрия Донского</name>
+		</stations>
+	</line>
+	<line>
+		<name>Люблинско-Дмитровская</name>
+		<color>#7FFFD4</color>
+		<stations>
+			<name>Марьина Роща</name>
+			<name>Достоевская</name>
+			<name>Трубная</name>
+			<name>Сретенский бульвар</name>
+			<name>Чкаловская</name>
+			<name>Римская</name>
+			<name>Крестьянская застава</name>
+			<name>Дубровка</name>
+			<name>Кожуховская</name>
+			<name>Печатники</name>
+			<name>Волжская</name>
+			<name>Люблино</name>
+			<name>Братиславская</name>
+			<name>Марьино</name>
+			<name>Борисово</name>
+			<name>Шипиловская</name>
+			<name>Зябликово</name>
+		</stations>
+	</line>
+	<line>
+		<name>Каховская</name>
+		<color>#CCCCFF</color>
+		<stations>
+			<name>Каширская</name>
+			<name>Варшавская</name>
+			<name>Каховская</name>
+		</stations>
+	</line>
+	<line>
+		<name>Бутовская</name>
+		<color>#B5B8B1</color>
+		<stations>
+			<name>Битцевский парк</name>
+			<name>Лесопарковая</name>
+			<name>Улица Старокачаловская</name>
+			<name>Улица Скобелевская</name>
+			<name>Бульвар адмирала Ушакова</name>
+			<name>Улица Горчакова</name>
+			<name>Бунинская аллея</name>
+		</stations>
+	</line>
+</metro>
