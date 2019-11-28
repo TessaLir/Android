@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EX-4-Animals</string>
+    <string name="menu_context_delete">Delete</string>
+    <string name="menu_context_update">Update</string>
+    <string name="menu_main_search">Search</string>
+    <string name="menu_main_up">Up</string>
+    <string name="memu_main_down">Down</string>
+    <string name="menu_main_add">Add</string>
+    <string name="main_notfound_text">Ни чего не найдено!</string>
+</resources>
