@@ -12,6 +12,13 @@ android {
         versionCode 1
         versionName "1.0"
 
+        // API ключ Flickr - если не зарегистрироваться,
+        // действует несколько часов
+        // Всегда можно получить новый выполнив запрос здесь:
+        // https://www.flickr.com/services/api/explore/flickr.photos.search
+        buildConfigField "String", "API_KEY", '"96a2026acb199c09bd7f5d03903b157a"'
+        buildConfigField "String", "API_ENDPOINT", '"https://api.flickr.com"'
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
