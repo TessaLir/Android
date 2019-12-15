@@ -1,2 +1,2 @@
-include ':ex-009-textview', ':ex-015-linearlayout', ':ex-017-relativelayout'
+include ':ex-009-textview', ':ex-015-linearlayout', ':ex-017-relativelayout', ':ex-020-posterapp'
 rootProject.name='AndroidKakPoNotam'
