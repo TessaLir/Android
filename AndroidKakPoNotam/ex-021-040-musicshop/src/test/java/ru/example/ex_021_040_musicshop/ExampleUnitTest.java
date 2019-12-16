@@ -1,4 +1,4 @@
-package ru.skillbranch.ex_021_040_musicshop;
+package ru.example.ex_021_040_musicshop;
 
 import org.junit.Test;
 
