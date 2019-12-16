@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EX-021-040-HelloJava</string>
+    <string name="main_btn_click">SUBMIT!</string>
+</resources>
