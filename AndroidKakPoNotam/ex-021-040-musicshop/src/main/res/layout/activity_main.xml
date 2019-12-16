@@ -78,6 +78,7 @@
                 android:id="@+id/main.btn.count_minus"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:clickable="false"
                 android:background="@color/colorPrimaryDark"
                 android:textColor="@android:color/white"
                 android:text="-"/>
