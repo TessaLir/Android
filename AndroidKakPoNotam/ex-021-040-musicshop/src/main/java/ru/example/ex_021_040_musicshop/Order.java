@@ -5,6 +5,7 @@ public class Order {
     private String userName;
     private String goodsName;
     private int quantity;
+    private double price;
     private double orderPrice;
 
     public String getUserName() {
@@ -37,5 +38,13 @@ public class Order {
 
     public void setOrderPrice(double orderPrice) {
         this.orderPrice = orderPrice;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

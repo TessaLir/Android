@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">EX-021-040-MusicShop</string>
 
-    <string-array name="cats_list" >
+    <string-array name="cats_list">
         <item>CAT 01</item>
         <item>CAT 02</item>
         <item>CAT 03</item>

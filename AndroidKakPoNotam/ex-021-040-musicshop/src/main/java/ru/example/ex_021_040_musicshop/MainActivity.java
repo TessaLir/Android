@@ -2,6 +2,7 @@ package ru.example.ex_021_040_musicshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +20,12 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity
                           implements View.OnClickListener,
                                      AdapterView.OnItemSelectedListener {
+
+    public static final String UNAME_TAG = "UNAME_TAG";
+    public static final String GOODS_TAG = "GOODS_TAG";
+    public static final String QUANT_TAG = "QUANT_TAG";
+    public static final String PRICE_TAG = "PRICE_TAG";
+    public static final String ORDPRICE_TAG = "ORDPRICE_TAG";
 
     private static Button btnAdd;
     private static Button btnMinus;
@@ -102,9 +109,20 @@ public class MainActivity extends AppCompatActivity
         order.setGoodsName(spnAnimals.getSelectedItem().toString());
         order.setQuantity(Integer.parseInt(tvItemCount.getText().toString()));
         order.setOrderPrice(Double.parseDouble(tvPrice.getText().toString()));
+        order.setPrice(Double.parseDouble(animalPrice.get(spnAnimals.getSelectedItem().toString()).toString()));
 
         Log.d("HAPPY", String.format("%s, %s, %s, %s",
                 order.getUserName(), order.getGoodsName(), order.getQuantity(), order.getOrderPrice()));
+
+        Intent intent = new Intent(MainActivity.this, OrderActivity.class);
+
+        intent.putExtra(UNAME_TAG, order.getUserName());
+        intent.putExtra(GOODS_TAG, order.getGoodsName());
+        intent.putExtra(QUANT_TAG, order.getQuantity());
+        intent.putExtra(PRICE_TAG, order.getOrderPrice());
+        intent.putExtra(ORDPRICE_TAG, order.getPrice());
+
+        startActivity(intent);
     }
 
 
