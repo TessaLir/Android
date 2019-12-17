@@ -119,8 +119,8 @@ public class MainActivity extends AppCompatActivity
         intent.putExtra(UNAME_TAG, order.getUserName());
         intent.putExtra(GOODS_TAG, order.getGoodsName());
         intent.putExtra(QUANT_TAG, order.getQuantity());
-        intent.putExtra(PRICE_TAG, order.getOrderPrice());
-        intent.putExtra(ORDPRICE_TAG, order.getPrice());
+        intent.putExtra(PRICE_TAG, order.getPrice());
+        intent.putExtra(ORDPRICE_TAG, order.getOrderPrice());
 
         startActivity(intent);
     }
