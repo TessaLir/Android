@@ -3,13 +3,14 @@ package ru.example.ex_021_040_musicshop;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -21,7 +22,9 @@ public class MainActivity extends AppCompatActivity
 
     private static Button btnAdd;
     private static Button btnMinus;
+    private static Button btnAddOrder;
     private static Spinner spnAnimals;
+    private static EditText etUserName;
     private static TextView tvItemCount;
     private static TextView tvPrice;
     private static ImageView ivItemImage;
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity
 
         btnAdd.setOnClickListener(this);
         btnMinus.setOnClickListener(this);
+        btnAddOrder.setOnClickListener(this);
         spnAnimals.setOnItemSelectedListener(this);
 
     }
@@ -50,9 +54,11 @@ public class MainActivity extends AppCompatActivity
     private void init() {
         btnAdd = findViewById(R.id.main_btn_count_add);
         btnMinus = findViewById(R.id.main_btn_count_minus);
+        btnAddOrder = findViewById(R.id.main_btn_add_order);
+        etUserName = findViewById(R.id.main_et_user_name);
         tvItemCount = findViewById(R.id.main_tv_count);
-        spnAnimals = findViewById(R.id.main_spn_animals);
         tvPrice = findViewById(R.id.main_tv_price);
+        spnAnimals = findViewById(R.id.main_spn_animals);
         ivItemImage = findViewById(R.id.main_iv_item);
     }
 
@@ -83,7 +89,22 @@ public class MainActivity extends AppCompatActivity
             case R.id.main_btn_count_minus :
                 setItemCount(0);
                 break;
+            case R.id.main_btn_add_order :
+                addToCart();
+                break;
         }
+    }
+
+    private void addToCart() {
+        Order order = new Order();
+
+        order.setUserName(etUserName.getText().toString());
+        order.setGoodsName(spnAnimals.getSelectedItem().toString());
+        order.setQuantity(Integer.parseInt(tvItemCount.getText().toString()));
+        order.setOrderPrice(Double.parseDouble(tvPrice.getText().toString()));
+
+        Log.d("HAPPY", String.format("%s, %s, %s, %s",
+                order.getUserName(), order.getGoodsName(), order.getQuantity(), order.getOrderPrice()));
     }
 
 
@@ -110,7 +131,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
+        //Do somthing
     }
 
     private static void changePrice() {

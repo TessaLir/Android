@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/main.et.name"
+        android:id="@+id/main.et.user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Your name"/>
@@ -107,7 +107,7 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/main.btn.add"
+        android:id="@+id/main.btn.add_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
