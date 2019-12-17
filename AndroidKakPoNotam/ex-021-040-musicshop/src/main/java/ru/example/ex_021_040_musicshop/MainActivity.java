@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity
-        implements View.OnClickListener,
-                   AdapterView.OnItemSelectedListener {
+                          implements View.OnClickListener,
+                                     AdapterView.OnItemSelectedListener {
 
     private static Button btnAdd;
     private static Button btnMinus;
@@ -37,32 +37,41 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        init();
+        createSpinner();
+        createMap();
+
+        btnAdd.setOnClickListener(this);
+        btnMinus.setOnClickListener(this);
+        spnAnimals.setOnItemSelectedListener(this);
+
+    }
+
+    private void init() {
         btnAdd = findViewById(R.id.main_btn_count_add);
         btnMinus = findViewById(R.id.main_btn_count_minus);
         tvItemCount = findViewById(R.id.main_tv_count);
         spnAnimals = findViewById(R.id.main_spn_animals);
         tvPrice = findViewById(R.id.main_tv_price);
         ivItemImage = findViewById(R.id.main_iv_item);
+    }
 
+    private void createMap() {
+        animalPrice = new HashMap<>();
+        animalPrice.put("Cats", 1500.0);
+        animalPrice.put("Dogs", 1000.0);
+        animalPrice.put("Rodents", 500.0);
+    }
+
+    private void createSpinner() {
         spinnerArrayList = new ArrayList<>();
         spinnerArrayList.add("Cats");
         spinnerArrayList.add("Dogs");
         spinnerArrayList.add("Rodents");
 
-        animalPrice = new HashMap<>();
-        animalPrice.put("Cats", 1500.0);
-        animalPrice.put("Dogs", 1000.0);
-        animalPrice.put("Rodents", 500.0);
-
         spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerArrayList);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnAnimals.setAdapter(spinnerAdapter);
-
-        btnAdd.setOnClickListener(this);
-        btnMinus.setOnClickListener(this);
-
-        spnAnimals.setOnItemSelectedListener(this);
-
     }
 
     @Override
