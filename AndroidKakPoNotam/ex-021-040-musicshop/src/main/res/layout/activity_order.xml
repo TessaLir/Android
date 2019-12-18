@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
-    android:id="@+id/order.tv.result"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textSize="24sp"
-    android:textStyle="bold"
-    android:textColor="@android:color/black"
-    tools:text="1111"
-    tools:context="ru.example.ex_021_040_musicshop.OrderActivity" />
+    android:padding="8dp"
+    tools:context="ru.example.ex_021_040_musicshop.OrderActivity">
+
+    <TextView
+        android:id="@+id/order.tv.result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        tools:text="1111" />
+
+    <Button
+        android:id="@+id/order.btn.send_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+
+        android:text="Send message" />
+
+
+</RelativeLayout>
