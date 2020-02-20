@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import ru.vetukov.java.androidfinance.R;
-//import ru.vetukov.java.androidfinance.fragments.SprListFragment.OnListFragmentInteractionListener;
 import ru.vetukov.java.core.interfaces.TreeNode;
 
 import java.util.List;
@@ -15,11 +14,9 @@ import java.util.List;
 public class SprListAdapter extends RecyclerView.Adapter<SprListAdapter.ViewHolder> {
 
     private final List<? extends TreeNode> mValues;
-//    private final OnListFragmentInteractionListener mListener;
 
     public SprListAdapter(List<? extends TreeNode> items/*, OnListFragmentInteractionListener listener*/) {
         mValues = items;
-//        mListener = listener;
     }
 
     @Override
