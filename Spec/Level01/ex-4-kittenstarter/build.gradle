@@ -16,7 +16,13 @@ android {
         // действует несколько часов
         // Всегда можно получить новый выполнив запрос здесь:
         // https://www.flickr.com/services/api/explore/flickr.photos.search
-        buildConfigField "String", "API_KEY", '"96a2026acb199c09bd7f5d03903b157a"'
+        // https://www.flickr.com/services/rest/?
+//                                 method=flickr.photos.search
+//                                &api_key=8aa2538194a92c038c756d335cff71a4
+//                                &format=json&nojsoncallback=1
+//                                &auth_token=72157713076995923-ba7eedca397e9b2a
+//                                &api_sig=be9f0a2c0020f30cafe07f845d98d5d5
+        buildConfigField "String", "API_KEY", '"8aa2538194a92c038c756d335cff71a4"'
         buildConfigField "String", "API_ENDPOINT", '"https://api.flickr.com"'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
