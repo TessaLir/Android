@@ -22,7 +22,7 @@ public class SprListAdapter extends RecyclerView.Adapter<SprListAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.spr_item, parent, false);
+                .inflate(R.layout.fragment_spr_item, parent, false);
         return new ViewHolder(view);
     }
 
