@@ -15,4 +15,5 @@
     <string name="menu_about">About</string>
     <string name="loading_text">Loading</string>
     <string name="menu_other">Other</string>
+    <string name="sources">Source</string>
 </resources>

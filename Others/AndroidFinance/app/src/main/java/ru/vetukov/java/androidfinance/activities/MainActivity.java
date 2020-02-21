@@ -3,6 +3,8 @@ package ru.vetukov.java.androidfinance.activities;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,22 +15,85 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import ru.vetukov.java.androidfinance.R;
 import ru.vetukov.java.androidfinance.fragments.SprListFragment;
+import ru.vetukov.java.core.database.Initializer;
 import ru.vetukov.java.core.interfaces.TreeNode;
 
 public class MainActivity extends AppCompatActivity
                           implements NavigationView.OnNavigationItemSelectedListener
                                     ,SprListFragment.OnListFragmentInteractionListener {
 
+    private ImageView backIcon;
+    private Toolbar toolbar;
+    private TextView toolbatTitle;
+
+    private TreeNode selectedNode;
+
+    private SprListFragment sprListFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        initToolbar();
+
+//        initFloatingActionButton();
+
+        initNavigationDrawer();
+
+        initFragment();
+
+    }
+
+    private void initFragment() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        sprListFragment = new SprListFragment();
+        fragmentTransaction.replace(R.id.spr_list_fragment, sprListFragment);
+
+//        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    private void initNavigationDrawer() {
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void initToolbar() {
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        toolbatTitle = findViewById(R.id.toolbar_title);
+        backIcon = findViewById(R.id.back_icon);
+
+        backIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (selectedNode.getParent() == null) { // показывать корневые элементы
+                    sprListFragment.updateData(Initializer.getSourceSync().getAll());
+                    toolbatTitle.setText(R.string.sources);
+                } else {
+                    sprListFragment.updateData(selectedNode.getParent().getChilds());//
+                    selectedNode = selectedNode.getParent();
+                    toolbatTitle.setText(selectedNode.getName());
+                }
+            }
+        });
+
+    }
+
+    private void initFloatingActionButton() {
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,14 +102,6 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-
     }
 
     @Override
@@ -101,7 +158,10 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onListFragmentInteraction(TreeNode item) {
-
+    public void onListFragmentInteraction(TreeNode selectedNode) {
+        this.selectedNode = selectedNode;
+        if (selectedNode.hasChilds()) {
+            toolbatTitle.setText(selectedNode.getName()); // показывает выбраннуб категорию.
+        }
     }
 }

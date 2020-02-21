@@ -9,8 +9,7 @@
     tools:context=".activities.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <fragment
-        android:name="ru.vetukov.java.androidfinance.fragments.SprListFragment"
+    <FrameLayout
         android:id="@+id/spr_list_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
