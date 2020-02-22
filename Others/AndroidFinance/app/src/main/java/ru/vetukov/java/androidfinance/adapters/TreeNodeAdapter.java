@@ -37,6 +37,11 @@ public class TreeNodeAdapter extends RecyclerView.Adapter<TreeNodeAdapter.ViewHo
 
         holder.mTVTitle.setText(node.getName());
 
+        if (node.hasChilds())
+            holder.mTVChCount.setText(String.format("%d",node.getChilds().size()));
+        else
+            holder.mTVChCount.setText("0");
+
         holder.mSprNameView.setOnClickListener(v -> {
             if (null != mListener) {
                 // Notify the active callbacks interface (the activity, if the
@@ -62,11 +67,13 @@ public class TreeNodeAdapter extends RecyclerView.Adapter<TreeNodeAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final TextView mTVTitle;
+        public final TextView mTVChCount;
         public final View mSprNameView;
 
         public ViewHolder(View view) {
             super(view);
             mTVTitle = view.findViewById(R.id.spr_name);
+            mTVChCount = view.findViewById(R.id.spr_child_count);
             mSprNameView = view.findViewById(R.id.spr_name_view);
         }
 
