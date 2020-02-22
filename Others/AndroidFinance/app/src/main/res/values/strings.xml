@@ -16,4 +16,7 @@
     <string name="loading_text">Loading</string>
     <string name="menu_other">Other</string>
     <string name="sources">Source</string>
+    <string name="popup_menu_add">+ SUB category</string>
+    <string name="popup_menu_edit">Edit</string>
+    <string name="popup_menu_delete">Delete</string>
 </resources>

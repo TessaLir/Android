@@ -37,6 +37,11 @@ public class DBConnection {
 
         dbPath = dbFolder + DB_NAME;
 
+        // TODO удалить для production
+        if (checkDataBaseExists()) {
+            new File(dbPath).delete();
+        }
+
         if (!checkDataBaseExists()) {
             copyDataBase(context);
         }

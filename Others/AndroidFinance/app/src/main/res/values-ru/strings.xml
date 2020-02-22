@@ -15,4 +15,9 @@
     <string name="menu_about">Справка</string>
     <string name="loading_text">Загрузка</string>
     <string name="menu_other">Прочее</string>
+    <string name="sources">Источник</string>
+    <string name="popup_menu_add">+ Добавить подкатегорию</string>
+    <string name="popup_menu_edit">Редактирование</string>
+    <string name="popup_menu_delete">Удалить</string>
+
 </resources>

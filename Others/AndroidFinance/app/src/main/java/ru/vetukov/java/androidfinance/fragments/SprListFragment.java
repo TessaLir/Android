@@ -84,7 +84,7 @@ public class SprListFragment extends Fragment {
         }
 
         list = Initializer.getSourceSync().getAll();
-        treeNodeAdapter = new TreeNodeAdapter(list, mListener);
+        treeNodeAdapter = new TreeNodeAdapter(list, mListener, context);
     }
 
     @Override
