@@ -1,4 +1,4 @@
-package ru.vetukov.java.androidfinance.app;
+package ru.vetukov.java.androidfinance.utils;
 
 import android.app.Application;
 

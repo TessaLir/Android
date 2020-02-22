@@ -95,5 +95,6 @@ public class SprListFragment extends Fragment {
 
     public interface OnListFragmentInteractionListener {
         void onListFragmentInteraction(TreeNode item);
+        void onOnBackImageVisibility(Boolean flag);
     }
 }

@@ -1,4 +1,4 @@
-package ru.vetukov.java.androidfinance.app;
+package ru.vetukov.java.androidfinance.database;
 
 import android.content.Context;
 import android.util.Log;
@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import ru.vetukov.java.androidfinance.utils.AppContext;
 import ru.vetukov.java.core.database.Initializer;
 
 public class DBConnection {

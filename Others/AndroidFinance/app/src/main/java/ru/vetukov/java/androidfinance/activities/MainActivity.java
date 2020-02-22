@@ -164,4 +164,9 @@ public class MainActivity extends AppCompatActivity
             toolbatTitle.setText(selectedNode.getName()); // показывает выбраннуб категорию.
         }
     }
+
+    @Override
+    public void onOnBackImageVisibility(Boolean flag) {
+        backIcon.setVisibility(flag ? View.VISIBLE : View.INVISIBLE);
+    }
 }
